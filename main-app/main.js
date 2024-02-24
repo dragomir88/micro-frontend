@@ -1,6 +1,7 @@
 // Configuration for sub-applications
 const appConfig = [
-    { id: "grid", version: "1.0.0", url: "http://localhost:5173/dist/bundle.js" },
+    // Update the `url` to point to the new path of the compiled JS file for "grid"
+    { id: "grid", version: "1.0.0", url: "http://localhost:5173/dist/assets/main-CY4n-nmB.js" },
     
     // ... other sub-apps
 ];
