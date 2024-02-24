@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Micro Frontend App</title>
+    <style>
+        .app-container { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr; 
+            height: 100vh; 
+        } 
+        .section { 
+            border: 1px solid #ccc; 
+            overflow-y: auto;
+        } 
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <div class="section" id="grid"></div>
+        <div class="section" id="text"></div>
+        <div class="section" id="image"></div>
+        <div class="section" id="list"></div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

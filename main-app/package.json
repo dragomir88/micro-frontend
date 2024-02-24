@@ -1,0 +1,13 @@
+{
+    "name": "main-app",
+    "version": "1.0.0",
+    "scripts": {
+      "serve": "http-server --cors"
+
+    },
+    "dependencies": {
+      "http-server": "*",
+      "sub-app-grid": "../sub-app-grid/dist/bundle.js"
+    }
+  }
+  
