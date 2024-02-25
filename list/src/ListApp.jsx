@@ -1,4 +1,3 @@
-// ListApp.jsx
 import React from "react";
 import "./ListApp.css";
 
