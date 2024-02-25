@@ -1,17 +1,16 @@
- 
-import './ListApp.css'
+// ListApp.jsx
+import React from 'react';
+import './ListApp.css';
 
-function ListApp() {
- 
-
+const ListApp = ({ data }) => {
+  // Now ListApp can render the data passed as props
   return (
     <>
-       
-      <p className="read-the-docs">
-        Click on the Vite  
-      </p>
+      {data && data.map((item, index) => (
+        <p key={index}>{item}</p>
+      ))}
     </>
-  )
-}
+  );
+};
 
-export default ListApp
+export default ListApp;
