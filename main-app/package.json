@@ -1,13 +1,19 @@
 {
-    "name": "main-app",
-    "version": "1.0.0",
-    "scripts": {
-      "serve": "http-server --cors"
-
-    },
-    "dependencies": {
-      "http-server": "*",
-      "sub-app-grid": "../sub-app-grid/dist/bundle.js"
-    }
+  "name": "main-app",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "npm-run-all --parallel start:*",
+    "start:main": "http-server --cors",
+    "start:grid": "cd ../grid && npm run dev",
+    "start:image": "cd ../image && npm run dev",
+    "start:list": "cd ../list && npm run dev",
+    "start:text": "cd ../text && npm run dev"
+  },
+  "dependencies": {
+    "http-server": "*",
+    "sub-app-grid": "../sub-app-grid/dist/bundle.js"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
   }
-  
+}
