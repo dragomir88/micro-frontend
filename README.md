@@ -10,8 +10,7 @@
     2. Install dependencies in each project.
 
     3. Go to main-app.
-        ```bash 
-        
-        npm run start
 
+        ```bash 
+        npm run start
         ```
