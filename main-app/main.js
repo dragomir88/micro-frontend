@@ -1,20 +1,28 @@
 // Configuration for sub-applications
 const appConfig = [
-    // Update the `url` to point to the new path of the compiled JS file for "grid"
-    { id: "grid", version: "1.0.0", url: "http://localhost:5173/dist/assets/main-CY4n-nmB.js" },
+    {
+        id: "grid",
+        version: "1.0.0",
+        url: "http://localhost:5173/dist/grid-app.es.js" // Updated URL for the ES module
+    },
+    {
+        id: "list",
+        version: "1.0.0",
+        url: "http://localhost:5174/dist/list-app.es.js" // Updated URL for the ES module
+    }
     
-    // ... other sub-apps
 ];
 
 // Function to dynamically load a sub-application
 function loadSubApp(config) {
-    const script = document.createElement('script');
-    script.src = config.url;
-    script.onload = () => {
-        // Assuming sub-apps expose a global 'mount' function
-        window[config.id].mount(document.getElementById(config.id)); 
-    };
-    document.body.appendChild(script);
+    import(config.url)
+    .then(module => {
+        // module.default is the exported mount function if using ES modules
+        module.mount(document.getElementById(config.id));
+    })
+    .catch(err => {
+        console.error(`Error loading ${config.id}:`, err);
+    });
 }
 
 // Load each sub-application

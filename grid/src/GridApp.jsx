@@ -1,8 +1,8 @@
-import './App.css'
+import './GridApp.css'
 import UsersTable from './UsersTable/UsersTable';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
-function App() {
+function GridApp() {
   const queryClient = new QueryClient();
   return (
     <>  
@@ -13,4 +13,4 @@ function App() {
   )
 }
 
-export default App
+export default GridApp
