@@ -11,6 +11,11 @@ const appConfig = [
         url: "http://localhost:5175/dist/text-app.es.js" // Updated URL for the ES module
     },
     {
+        id: "image",
+        version: "1.0.0",
+        url: "http://localhost:5176/dist/image-app.es.js" // Updated URL for the ES module
+    },
+    {
         id: "list",
         version: "1.0.0",
         url: "http://localhost:5174/dist/list-app.es.js" // Updated URL for the ES module
