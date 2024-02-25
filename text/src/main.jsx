@@ -12,3 +12,14 @@ export function mount(el) {
       </React.StrictMode>
   );
 }
+
+//auto-initialize in standalone mode
+(function autoInitialize() {
+  const standaloneMode = true;
+  if (standaloneMode) {
+    const rootElement = document.getElementById('root');
+    if (rootElement) {
+      mount(rootElement);
+    }
+  }
+})();

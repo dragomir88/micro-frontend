@@ -10,12 +10,14 @@ export function mount(el) {
         </React.StrictMode>
     );
 }
-//expose the mount 
-// window.grid = { mount };
-// // if we're in development mode app will mount not needing the main application
-// if (process.env.NODE_ENV === 'development') {
-//     const devRoot = document.getElementById('root');
-//     if (devRoot) {
-//         mount(devRoot);
-//     }
-// }
+
+//auto-initialize in standalone mode
+(function autoInitialize() {
+    const standaloneMode = true;
+    if (standaloneMode) {
+      const rootElement = document.getElementById('root');
+      if (rootElement) {
+        mount(rootElement);
+      }
+    }
+  })();

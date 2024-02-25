@@ -1,34 +1,30 @@
-// Configuration for sub-applications
-const appConfig = [
+ const appConfig = [
     {
         id: "grid",
-        version: "1.0.0",
-        url: "http://localhost:5173/dist/grid-app.es.js" // Updated URL for the ES module
+        version: "0.0.1",
+        url: `http://localhost:5173/dist/grid-app-0.0.1.es.js`  
     },
     {
         id: "text",
         version: "1.0.0",
-        url: "http://localhost:5175/dist/text-app.es.js" // Updated URL for the ES module
+        url: "http://localhost:5175/dist/text-app-0.0.1.es.js"  
     },
     {
         id: "image",
         version: "1.0.0",
-        url: "http://localhost:5176/dist/image-app.es.js" // Updated URL for the ES module
+        url: "http://localhost:5176/dist/image-app-0.0.1.es.js"  
     },
     {
         id: "list",
         version: "1.0.0",
-        url: "http://localhost:5174/dist/list-app.es.js" // Updated URL for the ES module
+        url: "http://localhost:5174/dist/list-app-0.0.1.es.js"  
     },
-   
     
 ];
 
-/// Function to dynamically load a sub-application
 function loadSubApp(config, data) {
     import(config.url)
     .then(module => {
-        // Use the module.mount function and pass the data array
         module.mount(document.getElementById(config.id), data);
     })
     .catch(err => {
@@ -36,12 +32,9 @@ function loadSubApp(config, data) {
     });
 }
 
-// Array of values to pass to the ListApp
-const listData = ["Item 1", "Item 2", "Item 3"];
-
-// Load each sub-application
+const listData = ["Item 1", "Item 2", "Item 3","Item 4", "Item 5", "Item 6","Item 7", "Item 8", "Item 9"];
+ 
 appConfig.forEach(config => {
-    // Check if the sub-application is 'list' and pass the array of values
     if (config.id === "list") {
         loadSubApp(config, listData);
     } else {

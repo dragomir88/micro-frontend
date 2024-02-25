@@ -1,0 +1,22 @@
+.app-container { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr; 
+    height: 100vh; 
+} 
+.section { 
+    overflow-y: auto;
+    margin: 2px;
+} 
+#grid{
+    border: 3px solid red; 
+}
+#text{
+    border: 3px solid orange; 
+}
+#image{
+    border: 3px solid blue; 
+}
+#list{
+    border: 3px solid green; 
+}
