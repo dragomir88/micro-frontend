@@ -5,6 +5,9 @@ import { version } from './package.json'
 
 export default defineConfig({
   plugins: [react()],
+  server: {
+    port: 5176
+  },
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/main.jsx'), // entry file
