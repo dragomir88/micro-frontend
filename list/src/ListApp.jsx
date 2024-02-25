@@ -1,14 +1,19 @@
 // ListApp.jsx
-import React from 'react';
-import './ListApp.css';
+import React from "react";
+import "./ListApp.css";
 
 const ListApp = ({ data }) => {
-  // Now ListApp can render the data passed as props
+  const containerStyle = {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+  };
   return (
     <>
-      {data && data.map((item, index) => (
-        <p key={index}>{item}</p>
-      ))}
+      <div style={containerStyle}>
+        {data && data.map((item, index) => <p key={index}>{item}</p>)}
+      </div>
     </>
   );
 };

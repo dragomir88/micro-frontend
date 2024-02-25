@@ -1,4 +1,3 @@
-// main.jsx
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import ListApp from './ListApp.jsx';
@@ -12,3 +11,14 @@ export function mount(el, data) {
         </React.StrictMode>
     );
 }
+
+//auto-initialize in standalone mode
+(function autoInitialize() {
+    const standaloneMode = true;
+    if (standaloneMode) {
+      const rootElement = document.getElementById('root');
+      if (rootElement) {
+        mount(rootElement);
+      }
+    }
+  })();
